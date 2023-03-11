@@ -12,6 +12,7 @@
     "@mantine/core": "^6.0.1",
     "@mantine/form": "^6.0.1",
     "@mantine/hooks": "^6.0.1",
+    "@supabase/supabase-js": "^2.10.0",
     "@types/node": "^18.15.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
@@ -56,6 +57,7 @@
     "i18next": "^22.4.10",
     "lint-staged": "^13.1.1",
     "prop-types": "^15.8.1",
+    "supabase": "^1.42.5",
     "webpack": "^5.76.1"
   },
   "scripts": {
@@ -63,6 +65,7 @@
     "changelog:patch": "standard-version --release-as patch --skip.commit --skip.tag",
     "changelog:minor": "standard-version --release-as minor --skip.commit --skip.tag",
     "changelog:major": "standard-version --release-as major --skip.commit --skip.tag",
+    "supabase:types": "supabase gen types typescript --local > src/@types/database.types.ts",
     "prepare": "husky install",
     "lint-branch-name": "yarn run branch-name-lint ./branchnamelinter.config.json",
     "start": "react-scripts start",
