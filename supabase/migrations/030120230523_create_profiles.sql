@@ -28,7 +28,7 @@ update
 
 -- This trigger automatically creates a profile entry when a new user signs up via Supabase Auth.
 -- See https://supabase.com/docs/guides/auth/managing-user-data#using-triggers for more details.
-create function public.handle_new_user() returns trigger as $ $ begin
+create function public.handle_new_user() returns trigger as $$ begin
 insert into
   public.profiles (id, full_name, avatar_url)
 values
@@ -42,7 +42,7 @@ return new;
 
 end;
 
-$ $ language plpgsql security definer;
+$$ language plpgsql security definer;
 
 create trigger on_auth_user_created
 after
